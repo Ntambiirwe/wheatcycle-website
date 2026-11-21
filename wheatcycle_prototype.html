@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WheatCycle | From Wheat Waste to Mattresses</title>
+<style>
+:root{--green:#285b45;--green2:#39785b;--lime:#d9edb8;--cream:#f7f6ef;--ink:#203329;--muted:#68776e;--line:#e2e8dd;--white:#fff;--gold:#d6a84c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1140px,calc(100% - 40px));margin:auto}
+header{background:linear-gradient(125deg,#183e30,#285b45 58%,#62815b);color:white;overflow:hidden}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:20px;font-weight:850;letter-spacing:-.5px}.logo span{color:#d9edb8}.navlinks{display:flex;gap:25px;font-size:13px;color:#e2eee5}.navlinks a:hover{color:#d9edb8}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:68px 0 100px}.kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#d9edb8;font-weight:800}.hero h1{font-size:clamp(42px,6vw,68px);line-height:1.02;letter-spacing:-2.5px;margin:16px 0}.hero p{color:#e0ebe3;line-height:1.75;font-size:16px;max-width:580px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-block;padding:13px 18px;border-radius:9px;font-size:13px;font-weight:800}.btn.light{background:#f7f6ef;color:#244c3a}.btn.outline{border:1px solid #a8c1ae;color:#fff}
+.visual{position:relative;min-height:350px;display:grid;place-items:center}.sun{position:absolute;width:290px;height:290px;border-radius:50%;background:#d9edb8;opacity:.95;right:8%;top:5%}.mattress{position:relative;width:330px;height:180px;background:linear-gradient(145deg,#fff,#dce6d7);border:9px solid #c7d8c6;border-radius:28px;transform:rotate(-12deg);box-shadow:0 28px 45px #102d1c55;display:flex;align-items:center;justify-content:center;z-index:2}.mattress:before{content:"";position:absolute;inset:16px;border:2px dashed #9eb99e;border-radius:16px}.mattress span{font-size:54px;z-index:1}.straw{position:absolute;font-size:46px;z-index:3}.s1{top:22px;left:8%}.s2{bottom:22px;right:5%}.leaf{position:absolute;font-size:35px;z-index:3}.l1{right:8%;bottom:15%}.l2{left:8%;bottom:5%}
+main{padding-bottom:75px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:-38px;position:relative}.stat,.card{background:white;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 28px #2033290a}.stat{padding:22px}.stat b{display:block;font-size:30px;color:var(--green)}.stat small{color:var(--muted);font-size:12px}.stat .qual{font-size:10px;color:#9a7130;display:block;margin-top:8px}
+section{padding-top:68px}.eyebrow{color:var(--green2);font-size:11px;font-weight:850;letter-spacing:1.7px;text-transform:uppercase}.heading{font-size:34px;letter-spacing:-1px;margin:9px 0 10px}.sub{color:var(--muted);line-height:1.7;max-width:720px;margin:0 0 25px}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{padding:25px}.card h3{margin:0 0 12px;font-size:19px}.card p{color:var(--muted);line-height:1.65;font-size:14px}.quote{border-left:4px solid var(--gold);padding:14px 17px;background:#fbf7e9;border-radius:0 10px 10px 0;color:#645331;line-height:1.6;font-size:14px}
+.barline{height:12px;background:#edf1e9;border-radius:20px;overflow:hidden;margin:12px 0 8px}.barline span{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#d7a34b,#e6c66f)}.splitrow{display:flex;justify-content:space-between;font-size:13px;font-weight:750}.disclaimer{font-size:11px!important;color:#9a7130!important}
+.pill{display:inline-block;background:#edf5e9;color:#39704f;padding:6px 10px;border-radius:30px;font-size:11px;font-weight:800;margin:3px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 15px;min-height:150px}.step .num{color:#8ca77e;font-weight:900;font-size:12px}.step h4{margin:9px 0 6px}.step p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.ideas{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.idea{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px}.idea .emoji{font-size:27px}.idea h4{font-size:13px;margin:10px 0 5px}.idea p{font-size:11px;line-height:1.5;color:var(--muted);margin:0}
+.matrix{width:100%;border-collapse:collapse;font-size:13px}.matrix th,.matrix td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left}.matrix th{font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:.7px}.matrix tr.selected{background:#f0f7eb;font-weight:750}.score{color:var(--green);font-weight:850}
+.layers{display:grid;gap:9px;margin:20px 0}.layer{padding:16px;border-radius:10px;text-align:center;font-size:13px;font-weight:800;border:1px solid #dce6d7}.layer:nth-child(1){background:#eef5e9}.layer:nth-child(2){background:#e4eee0}.layer:nth-child(3){background:#d6e6cd}.layer:nth-child(4){background:#c8dcbf}
+.tests{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.test{padding:18px;background:#fff;border:1px solid var(--line);border-radius:12px}.test b{font-size:13px}.test p{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:0}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.benefit{padding:22px;border-radius:14px;background:#244f3b;color:#fff}.benefit:nth-child(2){background:#39785b}.benefit:nth-child(3){background:#667e4d}.benefit h3{margin:10px 0}.benefit p{font-size:13px;line-height:1.65;color:#e1eee3}
+footer{background:#173b2d;color:#dce9df;padding:32px 0;font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding:50px 0 80px}.visual{min-height:260px}.sun{width:230px;height:230px}.mattress{width:280px;height:145px}.navlinks{gap:12px;font-size:11px}.steps{grid-template-columns:repeat(2,1fr)}.ideas{grid-template-columns:repeat(2,1fr)}.tests{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1140px)}nav{height:auto;padding:18px 0;align-items:flex-start;gap:12px;flex-direction:column}.navlinks{flex-wrap:wrap}.hero h1{font-size:45px}.stats{grid-template-columns:1fr}.two,.benefits{grid-template-columns:1fr}.heading{font-size:29px}.steps,.tests{grid-template-columns:1fr 1fr}.matrix{font-size:11px}.matrix th,.matrix td{padding:9px 6px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav><a class="logo" href="#">Wheat<span>Cycle</span> 🌾</a><div class="navlinks"><a href="#problem">The Problem</a><a href="#research">Research</a><a href="#concept">Our Concept</a><a href="#testing">Testing</a><a href="#impact">Impact</a></div></nav>
+  <div class="hero">
+   <div><div class="kicker">Design Thinking & Innovation · Unit 2 + Unit 3</div><h1>From wheat waste<br>to a better rest.</h1><p>Exploring a circular path that turns agricultural wheat residue into a useful, repairable and affordable mattress pad — connecting farmer needs with sustainable product design.</p><div class="buttons"><a class="btn light" href="#concept">Explore the prototype ↓</a><a class="btn outline" href="#research">See our research</a></div></div>
+   <div class="visual" aria-label="Illustration of a mattress made using wheat straw"><div class="sun"></div><span class="straw s1">🌾</span><div class="mattress"><span>🛏️</span></div><span class="straw s2">🌾</span><span class="leaf l1">🍃</span><span class="leaf l2">🌱</span></div>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+ <div class="stats">
+  <div class="stat"><b>80%</b><small>Approximate farmer residue-burning estimate</small><span class="qual">Illustrative field estimate — not statistically verified</span></div>
+  <div class="stat"><b>5</b><small>Reuse concepts explored during ideation</small></div>
+  <div class="stat"><b>1</b><small>Selected concept: layered wheat-straw mattress pad</small></div>
+ </div>
+
+ <section id="problem">
+  <div class="eyebrow">01 · The challenge</div><h2 class="heading">A waste problem — and a missed opportunity.</h2>
+  <p class="sub">After harvest, wheat residue can be burned or discarded when farmers do not have a convenient, trusted reuse pathway. The project explores whether this material can be connected to a practical bedding product.</p>
+  <div class="two">
+   <article class="card"><h3>What we observed</h3><p>During travel through Punjab, the team observed wheat-crop residue being burned in several farm fields. Interviewed farmers said they were not aware of product uses such as mattresses, and described burning as the quickest, lowest-cost disposal option.</p><div class="quote">The opportunity is not only to design a mattress material — it is to create a simple route from farm residue to useful value.</div></article>
+   <article class="card"><h3>What needs validation</h3><div class="splitrow"><span>Farmers burning residue</span><b>80%</b></div><div class="barline"><span style="width:80%"></span></div><div class="splitrow"><span>Other uses</span><b>20%</b></div><div class="barline"><span style="width:20%;background:#8eae7c"></span></div><p class="disclaimer">These are approximate project observations, not a statistically verified survey. A larger farmer survey is required.</p></article>
+  </div>
+ </section>
+
+ <section id="research">
+  <div class="eyebrow">02 · Discover and define</div><h2 class="heading">Designed around real people and needs.</h2>
+  <p class="sub">The research plan combines field observation, interviews and a questionnaire for potential users. Responses are organized into codes and themes to reveal the main design opportunity.</p>
+  <div class="two">
+   <article class="card"><h3>Who we considered</h3><span class="pill">Wheat farmers</span><span class="pill">Mattress users</span><span class="pill">Workers</span><span class="pill">Material stakeholders</span><p>Research questions explored residue handling, storage and transport difficulties, trust in new materials, comfort, safety, affordability and environmental value.</p></article>
+   <article class="card"><h3>Key themes from affinity mapping</h3><p><b>Waste handling:</b> burning, disposal, storage and transport.</p><p><b>Material opportunity:</b> abundant wheat residue is underused.</p><p><b>User experience:</b> comfort, safety, durability, affordability and trust.</p></article>
+  </div>
+  <div style="margin-top:16px" class="quote"><b>How might we</b> turn wheat waste into a safe, affordable mattress while creating a practical reuse opportunity for farmers?</div>
+ </section>
+
+ <section id="concept">
+  <div class="eyebrow">03 · Ideate and select</div><h2 class="heading">Five ideas. One practical direction.</h2>
+  <p class="sub">The team brainstormed different ways to use wheat straw and compared them on low cost, comfort, ease of making and sustainability.</p>
+  <div class="ideas">
+   <div class="idea"><div class="emoji">🧺</div><h4>Chopped straw cover</h4><p>Chopped straw inside a stitched fabric cover.</p></div>
+   <div class="idea"><div class="emoji">🧱</div><h4>Straw board base</h4><p>Compressed straw as a firm mattress base.</p></div>
+   <div class="idea"><div class="emoji">🧵</div><h4>Straw textile blend</h4><p>Wheat straw blended with recycled textile fibre.</p></div>
+   <div class="idea"><div class="emoji">🛏️</div><h4>Layered mattress pad</h4><p>Straw fibre, cloth and a breathable cover in layers.</p></div>
+   <div class="idea"><div class="emoji">🧩</div><h4>Modular panels</h4><p>Straw-filled sections designed for repair and replacement.</p></div>
+  </div>
+  <article class="card" style="margin-top:18px"><h3>Idea evaluation matrix</h3><div style="overflow:auto"><table class="matrix"><thead><tr><th>Concept</th><th>Low cost</th><th>Comfort</th><th>Easy to make</th><th>Sustainability</th><th>Total</th></tr></thead><tbody>
+  <tr><td>Chopped straw in fabric cover</td><td>5</td><td>3</td><td>5</td><td>5</td><td class="score">18</td></tr>
+  <tr><td>Compressed straw board base</td><td>3</td><td>2</td><td>3</td><td>5</td><td class="score">13</td></tr>
+  <tr><td>Straw + recycled textile blend</td><td>3</td><td>4</td><td>3</td><td>5</td><td class="score">15</td></tr>
+  <tr class="selected"><td>Layered straw mattress pad ✓</td><td>4</td><td>5</td><td>4</td><td>5</td><td class="score">18</td></tr>
+  <tr><td>Modular straw-filled panels</td><td>3</td><td>4</td><td>4</td><td>5</td><td class="score">16</td></tr>
+  </tbody></table></div><p>Two concepts scored 18. The layered pad was selected because it achieved the highest comfort score while retaining a practical reuse pathway.</p></article>
+ </section>
+
+ <section>
+  <div class="eyebrow">04 · Prototype design</div><h2 class="heading">Inside the layered wheat-straw pad.</h2>
+  <p class="sub">The proposed low-fidelity prototype uses prepared straw enclosed within protective layers. The design aims to be washable, repairable and easy to refill.</p>
+  <div class="two">
+   <article class="card"><h3>Four-part construction</h3><div class="layers"><div class="layer">01 · Washable, breathable outer cover</div><div class="layer">02 · Protective inner lining</div><div class="layer">03 · Dried, chopped wheat-straw filling</div><div class="layer">04 · Simple supporting base</div></div><p>Stitched sections help distribute filling. A zip or removable panel can make refilling and repair easier.</p></article>
+   <article class="card"><h3>Proposed working principle</h3><ol style="padding-left:20px;color:var(--muted);font-size:14px;line-height:1.9"><li>Collect wheat residue after harvest.</li><li>Sort, clean and dry it fully.</li><li>Chop or screen the material.</li><li>Fill the lining sections evenly.</li><li>Close the cover and inspect the pad.</li><li>Open sections later to refill or repair.</li></ol><div class="quote">Safety focus: keep the straw dry and enclosed. Moisture and mould are key concerns.</div></article>
+  </div>
+ </section>
+
+ <section id="testing">
+  <div class="eyebrow">05 · Test and improve</div><h2 class="heading">A prototype must earn trust.</h2>
+  <p class="sub">The following are proposed tests, not completed or certified results. Testing would guide the next design iteration.</p>
+  <div class="tests">
+   <div class="test"><b>Comfort and trust</b><p>Review softness, support, smell and cover feel. Aim for acceptable comfort and user confidence.</p></div>
+   <div class="test"><b>Compression</b><p>Apply a known load and compare thickness before and after. Look for limited permanent flattening.</p></div>
+   <div class="test"><b>Moisture and mould</b><p>Observe under controlled humidity. Check for dampness, strong odour or mould growth.</p></div>
+   <div class="test"><b>Dust and enclosure</b><p>Inspect after handling to check that filling stays inside the protective lining.</p></div>
+   <div class="test"><b>Durability</b><p>Repeat loading and inspect seams, cover and sections for damage.</p></div>
+   <div class="test"><b>Process test</b><p>Record time and effort for collection, drying and filling to identify difficult steps.</p></div>
+  </div>
+  <div class="quote" style="margin-top:16px">Project boundary: this is a proposed student prototype, not a certified sleeping product. It should not be used as a finished mattress without appropriate material, hygiene, fire-safety and durability testing.</div>
+ </section>
+
+ <section id="impact">
+  <div class="eyebrow">06 · Deliver and sustain</div><h2 class="heading">Value across the whole cycle.</h2>
+  <p class="sub">The final concept connects agricultural residue with a useful product and a potential local collection, processing, production and repair pathway.</p>
+  <div class="benefits">
+   <div class="benefit"><div style="font-size:25px">🌍</div><h3>Environmental</h3><p>Could turn agricultural residue into a useful product instead of burning or discarding it.</p></div>
+   <div class="benefit"><div style="font-size:25px">🤝</div><h3>Social</h3><p>Could give farmers a clearer reuse opportunity and support access to affordable bedding.</p></div>
+   <div class="benefit"><div style="font-size:25px">♻️</div><h3>Economic</h3><p>Could create local value through collection, processing, production and repair using a local input.</p></div>
+  </div>
+  <div style="margin-top:20px" class="card"><h3>Design thinking journey</h3><div class="steps">
+   <div class="step"><span class="num">01</span><h4>Empathize</h4><p>Understand farmers' and bedding users' needs.</p></div>
+   <div class="step"><span class="num">02</span><h4>Define</h4><p>Identify residue burning and the missing reuse pathway.</p></div>
+   <div class="step"><span class="num">03</span><h4>Ideate</h4><p>Generate and compare five reuse concepts.</p></div>
+   <div class="step"><span class="num">04</span><h4>Prototype</h4><p>Develop the layered wheat-straw mattress pad.</p></div>
+   <div class="step"><span class="num">05</span><h4>Test</h4><p>Plan tests, gather feedback and improve the design.</p></div>
+  </div></div>
+ </section>
+</main>
+<footer><div class="wrap"><b>WheatCycle · Wheat Waste to Mattresses</b><span>Design Thinking & Innovation · Student project prototype</span><span>Concept and estimates require further validation.</span></div></footer>
+</body></html>
